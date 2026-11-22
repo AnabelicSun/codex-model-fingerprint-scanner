@@ -8,6 +8,8 @@
    requested model. Always save original groups and restore them in `finally`.
 4. Send one fixed lm-detector challenge through the normal Responses endpoint. Let the server
    route it through that account's native `proxy_id` egress.
+   Prefer Responses SSE for the quick pass so the sampler's deadline covers a slow response while
+   the proxy slot remains bounded.
 5. Classify behavior first. Keep `model_unavailable`, `rate_limited`, upstream 5xx and sample
    timeout separate from a behavior mismatch.
 6. Delete the temporary key, user and group, then verify there are no `tmp-fast-lmfp-*` objects.

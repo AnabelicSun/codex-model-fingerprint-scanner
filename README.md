@@ -9,6 +9,9 @@ The response `model` field is supporting evidence only. A behavior prediction fr
 is required before labeling a model mismatch. Use a later multi challenge run when a candidate
 needs confirmation.
 
+Use the Responses SSE mode for the fast path. It lets the detector enforce a real sample deadline;
+non streaming JSON can keep an account and its proxy slot occupied while a slow body is generated.
+
 Before calling a model unavailable, inspect the platform layers. A 404 can be caused by the
 account's non empty `credentials.model_mapping` or by a group `model_allowlist`. For a temporary
 experiment, save the complete mapping, use
