@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+credentials/
+results/
+*.jsonl
+*.json
+challenge*.txt
+raw-responses/
